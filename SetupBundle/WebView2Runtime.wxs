@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+    <Fragment>
+        <util:RegistrySearch Root="HKLM" Key="SOFTWARE\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}" Value="EBWebView"
+                             Variable="RuntimeInstalled" Win64="no" />
+        <PackageGroup Id="WebView2Runtime">
+            <ExePackage Name="WebView2 Bootstrapper" DisplayName="Microsoft Edge WebView2 Runtime" Cache="no" Compressed="yes"
+                        PerMachine="yes" Permanent="yes" Vital="yes" SourceFile="C:\Temp\MicrosoftEdgeWebview2Setup.exe"
+                        InstallCommand="/silent /install" InstallCondition="NOT (REMOVE OR RuntimeInstalled)">
+            </ExePackage>
+        </PackageGroup>
+    </Fragment>
+</Wix>
