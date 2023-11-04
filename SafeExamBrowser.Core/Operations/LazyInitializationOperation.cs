@@ -73,7 +73,6 @@ namespace SafeExamBrowser.Core.Operations
 		{
 			this.initialize = initialize;
 		}
-
 		public OperationResult Perform()
 		{
 			operation = initialize.Invoke();
